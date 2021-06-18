@@ -1,5 +1,6 @@
 package pe.gob.id.sdk.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Arrays;
@@ -7,6 +8,7 @@ import java.util.Arrays;
 /**
  * @author Alexander Llacho
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Config {
 
     @JsonProperty("issuer")

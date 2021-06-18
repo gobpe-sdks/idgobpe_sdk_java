@@ -1,10 +1,12 @@
 package pe.gob.id.sdk.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * @author Alexander Llacho
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class TokenResponse {
 
     @JsonProperty("token_type")

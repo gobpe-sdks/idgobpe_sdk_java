@@ -1,12 +1,16 @@
 package pe.gob.id.sdk.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * @author Alexander Llacho
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
 
+    @JsonProperty("doc_type")
+    private String docType;
     @JsonProperty("doc")
     private String doc;
     @JsonProperty("first_name")
@@ -17,6 +21,14 @@ public class User {
     private String sub;
 
     public User() {
+    }
+
+    public String getDocType() {
+        return docType;
+    }
+
+    public void setDocType(String docType) {
+        this.docType = docType;
     }
 
     public String getDoc() {
@@ -54,7 +66,8 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "doc='" + doc + '\'' +
+                "docType='" + docType + '\'' +
+                ", doc='" + doc + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", ruc='" + ruc + '\'' +
                 ", sub='" + sub + '\'' +
