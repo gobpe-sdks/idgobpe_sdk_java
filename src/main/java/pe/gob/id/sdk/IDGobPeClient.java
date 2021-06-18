@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -131,7 +132,7 @@ public class IDGobPeClient {
 
     public User getUserInfo(String accessToken) throws IOException {
         CloseableHttpClient client = HttpClients.custom().setSSLSocketFactory(MySSLConnectionSocketFactory.getConnectionSocketFactory()).build();
-        HttpPost post = new HttpPost(this.config.getUserInfoUri());
+        HttpGet post = new HttpGet(this.config.getUserInfoUri());
 
         post.setHeader("Content-Type", "application/x-www-form-urlencoded");
         post.setHeader("Authorization", "Bearer " + accessToken);
