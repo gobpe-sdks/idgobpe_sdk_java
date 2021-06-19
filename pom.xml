@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.gobpe-sdks</groupId>
     <artifactId>idgobpe_sdk_java</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.3</version>
     <packaging>jar</packaging>
 
     <name>io.github.gobpe-sdks:idgobpe_sdk_java</name>
@@ -45,7 +44,7 @@
         <url>scm:git:git@github.com:gobpe-sdks/idgobpe_sdk_java.git</url>
         <connection>scm:git:git@github.com:gobpe-sdks/idgobpe_sdk_java.git</connection>
         <developerConnection>scm:git:git@github.com:gobpe-sdks/idgobpe_sdk_java.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>idgobpe_sdk_java-1.0.3</tag>
     </scm>
 
     <distributionManagement>
