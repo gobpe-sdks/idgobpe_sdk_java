@@ -89,9 +89,9 @@ public class IDGobPeClient {
 
     public TokenResponse getTokens(final String code) throws IOException {
         CloseableHttpClient client = HttpClients.custom().setSSLSocketFactory(MySSLConnectionSocketFactory.getConnectionSocketFactory()).build();
-        HttpPost post = new HttpPost(this.config.getTokenUri());
+        HttpPost oRequest = new HttpPost(this.config.getTokenUri());
 
-        post.setHeader("Content-Type", "application/x-www-form-urlencoded");
+        oRequest.setHeader("Content-Type", "application/x-www-form-urlencoded");
 
         List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
         urlParameters.add(new BasicNameValuePair("grant_type", "authorization_code"));
@@ -100,9 +100,9 @@ public class IDGobPeClient {
         urlParameters.add(new BasicNameValuePair("client_id", this.config.getClientId()));
         urlParameters.add(new BasicNameValuePair("client_secret", this.config.getClientSecret()));
 
-        post.setEntity(new UrlEncodedFormEntity(urlParameters, StandardCharsets.UTF_8));
+        oRequest.setEntity(new UrlEncodedFormEntity(urlParameters, StandardCharsets.UTF_8));
 
-        HttpResponse response = client.execute(post);
+        HttpResponse response = client.execute(oRequest);
         Object object = ConvertResponse.getInstance().convert(response, TokenResponse.class);
 
         if (object != null) {
@@ -132,12 +132,12 @@ public class IDGobPeClient {
 
     public User getUserInfo(String accessToken) throws IOException {
         CloseableHttpClient client = HttpClients.custom().setSSLSocketFactory(MySSLConnectionSocketFactory.getConnectionSocketFactory()).build();
-        HttpGet post = new HttpGet(this.config.getUserInfoUri());
+        HttpGet oRequest = new HttpGet(this.config.getUserInfoUri());
 
-        post.setHeader("Content-Type", "application/x-www-form-urlencoded");
-        post.setHeader("Authorization", "Bearer " + accessToken);
+        oRequest.setHeader("Content-Type", "application/x-www-form-urlencoded");
+        oRequest.setHeader("Authorization", "Bearer " + accessToken);
 
-        HttpResponse response = client.execute(post);
+        HttpResponse response = client.execute(oRequest);
         Object object = ConvertResponse.getInstance().convert(response, User.class);
 
         if (object != null) {
