@@ -11,6 +11,7 @@ public enum Acr {
     CERTIFICATE_DNIE("certificate_dnie"),
     CERTIFICATE_TOKEN("certificate_token"),
     ONE_FACTOR("one_factor"),
+    TWO_FACTOR("two_factor"),
     CERTIFICATE_DNIE_LEGACY("certificate_dnie_legacy"),
     CERTIFICATE_TOKEN_LEGACY("certificate_token_legacy");
 
